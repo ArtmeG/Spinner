@@ -1,0 +1,287 @@
+// out: ../css/style.css
+
+html, body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.spinner {
+    margin: 0 20px;
+
+    &.lines {
+        position: relative;
+        height: 40px;
+        width: 45px;
+
+        @keyframes lines {
+            0%, 100% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(0.4);
+            }
+        }
+
+        > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 10px;
+            animation: lines 1s ease infinite;
+
+            &:nth-child(2) {
+                left: 10px;
+                animation-delay: 0.1s;
+            }
+
+            &:nth-child(3) {
+                left: 20px;
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(4) {
+                left: 30px;
+                animation-delay: 0.3s;
+            }
+
+            &:nth-child(5) {
+                left: 40px;
+                animation-delay: 0.4s;
+            }
+        }
+    }
+
+    &.clock {
+        position: relative;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        background-color: #fff;
+        border: 2px solid #ccc;
+
+        @keyframes clock {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        > span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 3px;
+            width: 30px;
+            background-color: #000;
+            border-radius: 10px;
+            animation: clock 3s linear infinite;
+            transform-origin: 0 50%;
+        }
+    }
+
+    &.circle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+
+        @keyframes circle {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        > span {
+            background-color: #000;
+            height: 40px;
+            width: 40px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 100%;
+            animation: circle 1.2s ease infinite;
+
+            &:nth-child(2) {
+                // animation-duration: 0.9s;
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(3) {
+                // animation-duration: 1.4s;
+                animation-delay: 0.4s;
+            }
+        }
+    }
+
+    &.circles {
+        position: relative;
+        width: 40px;
+        height: 40px;
+
+        @keyframes circles {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(0.4);
+                opacity: 0.3;
+            }
+        }
+
+        > span {
+            border-radius: 100%;
+            background-color: #000;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 15px;
+            animation: circles 1s linear infinite;
+
+            &:nth-child(2) {
+                left: 26px;
+                top: 4px;
+                animation-delay: -0.1s;
+            }
+
+            &:nth-child(3) {
+                left: 30px;
+                top: 15px;
+                animation-delay: -0.2s;
+            }
+
+            &:nth-child(4) {
+                left: 26px;
+                top: 26px;
+                animation-delay: -0.3s;
+            }
+
+            &:nth-child(5) {
+                left: 15px;
+                top: 30px;
+                animation-delay: -0.4s;
+            }
+
+            &:nth-child(6) {
+                left: 4px;
+                top: 26px;
+                animation-delay: -0.5s;
+            }
+
+            &:nth-child(7) {
+                left: 0;
+                top: 15px;
+                animation-delay: -0.6s;
+            }
+            
+            &:nth-child(8) {
+                left: 4px;
+                top: 4px;
+                animation-delay: -0.8s;
+            }
+
+        }
+    }
+
+    &.square {
+        position: relative;
+        width: 40px;
+        height: 40px;
+
+        @keyframes square {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: translateX(30px) scale(0.5) rotate(-90deg);
+            }
+
+            50% {
+                transform: translate(30px, 30px) rotate(-180deg);
+            }
+
+            75% {
+                transform: translateY(30px) scale(0.5) rotate(-270deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        > span {
+            background-color: #000;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: square 2s linear infinite;
+
+            &:nth-child(2) {
+                animation-delay: -1s;
+            }
+        }
+    }
+
+    &.half-circle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: #ccc;
+        border-radius: 100%;
+
+        @keyframes half-circle {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            
+            50% {
+                transform: rotate(45deg) scale(1.2);
+            }
+
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        > span {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            bottom: -3px;
+            right: -3px;
+            border-left: 3px solid #000;
+            border-right: 3px solid #000;
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-radius: 100%;
+            animation: half-circle 1s linear infinite;
+        }
+    }
+}
